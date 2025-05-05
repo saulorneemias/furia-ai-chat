@@ -1,53 +1,75 @@
-# 🤖 FURIA FanBot - Assistente Inteligente para Torcedores
+# FURIA AI Chat
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Telegram](https://img.shields.io/badge/Telegram-Bot-blue.svg)](https://core.telegram.org/bots)
+Um chatbot inteligente desenvolvido para fãs do time de CS:GO da FURIA. Essa aplicação permite conversas contextuais com usuários, com foco em interatividade, respostas personalizadas e integração fácil via web ou outros canais.
 
-Um bot de Telegram inteligente para torcedores da FURIA Esports (CS:GO), com respostas baseadas em IA (Ollama/Gemini) e um robusto sistema de fallback estático.
+## 🚀 Funcionalidades
 
-![FURIA FanBot Demo](https://via.placeholder.com/800x400?text=FURIA+FanBot+Demo+GIF)
+- 🧠 Respostas contextuais baseadas em histórico de conversa
+- 📦 Estrutura modular para fácil manutenção e escalabilidade
+- 🐳 Suporte completo a Docker e Docker Compose
+- 🔧 Configuração via `.env` e `config.py`
+- 📁 Armazenamento de dados local para manter histórico
 
-## 📌 Sumário
-- [Funcionalidades](#-funcionalidades)
-- [Arquitetura](#-arquitetura)
-- [Pré-requisitos](#-pré-requisitos)
-- [Configuração](#-configuração)
-- [IA Integrada](#-ia-integrada)
-- [Fallback Estático](#-fallback-estático)
-- [Deploy](#-deploy)
-- [Contribuição](#-contribuição)
-- [Licença](#-licença)
+## 📂 Estrutura do Projeto
 
-## 🎯 Funcionalidades
+```
+furia-ai-chat/
+│
+├── app.py                    # Arquivo principal da aplicação
+├── furia_ai.py              # Lógica central do chatbot
+├── conversation_manager.py  # Gerencia histórico da conversa
+├── data_manager.py          # Lida com persistência de dados
+├── config.py                # Configurações da aplicação
+├── requirements.txt         # Dependências Python
+├── docker-compose.yml       # Orquestração com Docker
+├── dockerfile               # Dockerfile base
+├── .env                     # Variáveis de ambiente
+```
 
-### 💡 Respostas Inteligentes
-- **IA Local (Ollama)**: Respostas geradas por modelos LLM locais
-- **IA em Nuvem (Gemini)**: Opção de usar a API do Google Gemini para respostas mais completas
-- **Priorização Inteligente**: Tenta Ollama primeiro, depois Gemini (se disponível), e finalmente fallback
+## 🐍 Requisitos
 
-### 📚 Banco de Dados Estático
-- 50+ respostas pré-definidas sobre:
-  - Elenco (jogadores, técnico, estatísticas)
-  - Próximos jogos (adversários, datas, torneios)
-  - Histórico de resultados
-  - Redes sociais e contatos
+- Python 3.10+
+- Docker (opcional, mas recomendado)
 
-### ⌨️ Comandos do Telegram
-| Comando       | Descrição                          |
-|---------------|-----------------------------------|
-| `/start`      | Mensagem de boas-vindas           |
-| `/jogadores`  | Lista o elenco atual              |
-| `/proximojogo`| Mostra a próxima partida          |
-| `/ajuda`      | Lista todos os comandos disponíveis |
+## 🛠️ Instalação
 
-## 🏗️ Arquitetura
+### 1. Clonando o projeto
 
 ```bash
-furia-fanbot/
-├── app.py                # Código principal (Flask + Telegram)
-├── .env                  # Chaves de API e configurações
-├── requirements.txt      # Dependências
-├── static_responses.py   # Banco de respostas estáticas
-├── README.md             # Documentação
-└── LICENSE               # Licença MIT
+git clone https://github.com/seu-usuario/furia-ai-chat.git
+cd furia-ai-chat
+```
+
+### 2. Criando ambiente virtual (opcional)
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
+```
+
+### 3. Instalando dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Executando o app
+
+```bash
+python app.py
+```
+
+### Ou via Docker
+
+```bash
+docker-compose up --build
+```
+
+## 📄 Licença
+
+Este projeto está licenciado sob os termos do arquivo [LICENSE](LICENSE).
+
+## 🤝 Contribuições
+
+Sinta-se livre para abrir issues, sugerir melhorias ou enviar pull requests!
