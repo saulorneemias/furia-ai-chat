@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis
+    container_name: furia-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --save 60 1 --loglevel warning
+
+  app:
+    build: .
+    container_name: furia-chatbot
+    ports:
+      - "5000:5000"
+    environment:
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+    volumes:
+      - .:/app
+
+volumes:
+  redis_data:

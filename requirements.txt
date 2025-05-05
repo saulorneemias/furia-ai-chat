@@ -1,0 +1,9 @@
+flask
+python-telegram-bot
+openai
+python-dotenv
+flask-cors
+apscheduler
+requests
+redis
+aiohttp==3.9.3
