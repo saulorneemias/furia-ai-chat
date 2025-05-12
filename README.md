@@ -71,7 +71,7 @@ docker-compose up --build
 Este projeto está licenciado sob os termos do arquivo [LICENSE](LICENSE).
 
 ## 🧠 Observações
-Algumas observações a maior parte do código foi feito utilizando auxilio de AI, incentivado pelo próprio desafio.
+Algumas observações: A maior parte do código foi feito utilizando auxilio de AI, incentivado pelo próprio desafio.
 O modelo está utilizando AI local porém pode sim ser utilizado com alguma outra AI de sua preferência.
 
 ## 🤝 Contribuições
